@@ -4,10 +4,10 @@
         double precision x_mean,y_mean
         double precision x_sum,y_sum,xx_sum,xy_sum
 
-        x_sum=0d0;
-        y_sum=0d0
-        xx_sum=0d0
-        xy_sum=0d0
+        x_sum=0.0d0
+        y_sum=0.0d0
+        xx_sum=0.0d0
+        xy_sum=0.0d0
 
         do i=1,n
           x_sum=x_sum+x(i)
@@ -16,8 +16,8 @@
           xy_sum=xy_sum + x(i)*y(i)
         enddo
 
-        x_mean=x_sum / n
-        y_mean=y_sum / n
+        x_mean=x_sum / dble(n)
+        y_mean=y_sum / dble(n)
 
         a=(n*xy_sum - x_sum*y_sum) / (n*xx_sum - x_sum**2)
         b=(xx_sum*y_sum - xy_sum*x_sum) / (n*xx_sum - x_sum**2)
@@ -41,7 +41,7 @@
           x_avg = x_sum / dble(N)
           y_avg = y_sum / dble(N)
 
-          !compute var of x,y
+          !compute var of x,y,xy
           x_var=0.0d0
           y_var=0.0d0
           xy_var=0.0d0

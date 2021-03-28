@@ -9,8 +9,8 @@
       double precision integral_val,x_val,x_min,x_max,y(1000100),delta
 
       if (N.lt.1) then
-        exit
-      end
+        stop
+      endif
 
       x_val=x_min
       delta=(x_max-x_min) / (2*N)
